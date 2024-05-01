@@ -6,7 +6,9 @@ Library    SeleniumLibrary
 
 Open Web
     [Arguments]    ${url}    ${browser}
+    ## option for run headless chrome
     Open Browser    ${url}    ${browser}    options=add_argument("--headless")
+    # Open Browser    ${url}    ${browser}
 
 Add Todo
     [Arguments]    ${path}
