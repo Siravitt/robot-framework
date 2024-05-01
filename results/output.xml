@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.12.2 on darwin)" generated="2024-05-01T15:29:10.001149" rpa="false" schemaversion="5">
+<suite id="s1" name="Kl-Robot" source="/Users/a667450/Workspace/kl-robot">
+<suite id="s1-s1" name="Todo" source="/Users/a667450/Workspace/kl-robot/todo.robot">
+<test id="s1-s1-t1" name="Test-Todo-List" line="13">
+<kw name="Open Web" owner="keywords">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-05-01T15:29:10.150390" level="INFO">Opening browser 'chrome' to base url 'https://todomvc.com/examples/react/dist/'.</msg>
+<msg time="2024-05-01T15:29:10.462673" level="WARN">The chromedriver version (123.0.6312.58) detected in PATH at /Users/a667450/.cache/selenium/chromedriver/mac-arm64/123.0.6312.58//chromedriver might not be compatible with the detected chrome version (124.0.6367.118); currently, chromedriver 124.0.6367.91 is recommended for chrome 124.*, so it is advised to delete the driver in PATH and retry</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<arg>options=add_argument("--headless")</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-05-01T15:29:10.150298" elapsed="1.332778"/>
+</kw>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<status status="PASS" start="2024-05-01T15:29:10.150023" elapsed="1.333257"/>
+</kw>
+<kw name="Add Todo" owner="keywords">
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>${path}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2024-05-01T15:29:11.483796" elapsed="0.019804"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-01T15:29:11.503816" level="INFO">Typing text 'Hello world' into text field '//*[@id="todo-input"]'.</msg>
+<arg>${path}</arg>
+<arg>Hello world</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-01T15:29:11.503700" elapsed="0.091443"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2024-05-01T15:29:11.595482" level="INFO">Sending key(s) ('ENTER',) to //*[@id="todo-input"] element.</msg>
+<msg time="2024-05-01T15:29:11.862480" level="INFO">Pressing special key ENTER to element.</msg>
+<msg time="2024-05-01T15:29:11.862534" level="INFO">Releasing special key ENTER.</msg>
+<arg>${path}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2024-05-01T15:29:11.595250" elapsed="0.298956"/>
+</kw>
+<arg>${PATH_INPUT}</arg>
+<status status="PASS" start="2024-05-01T15:29:11.483531" elapsed="0.410747"/>
+</kw>
+<kw name="Element Should Contain" owner="SeleniumLibrary">
+<msg time="2024-05-01T15:29:11.904530" level="INFO">Element '//*[@id="root"]/main/ul/li/div/label' contains text 'Hello world'.</msg>
+<arg>${PATH_LIST}</arg>
+<arg>Hello world</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="PASS" start="2024-05-01T15:29:11.894387" elapsed="0.010186"/>
+</kw>
+<kw name="Check Todo" owner="keywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-01T15:29:11.904906" level="INFO">Clicking element '//*[@id="root"]/main/ul/li/div/input'.</msg>
+<arg>${path}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-01T15:29:11.904830" elapsed="0.021387"/>
+</kw>
+<arg>//*[@id="root"]/main/ul/li/div/input</arg>
+<status status="PASS" start="2024-05-01T15:29:11.904697" elapsed="0.021582"/>
+</kw>
+<kw name="Delete Todo" owner="keywords">
+<kw name="Mouse Over" owner="SeleniumLibrary">
+<msg time="2024-05-01T15:29:11.926629" level="INFO">Simulating Mouse Over on element '//*[@id="root"]/main/ul/li/div/label'.</msg>
+<arg>${path1}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<status status="PASS" start="2024-05-01T15:29:11.926547" elapsed="0.259327"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${path2}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-05-01T15:29:12.186080" elapsed="0.015311"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-05-01T15:29:12.201604" level="INFO">Clicking button '//*[@id="root"]/main/ul/li/div/button'.</msg>
+<arg>${path2}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-01T15:29:12.201488" elapsed="0.023143"/>
+</kw>
+<arg>${PATH_LIST}</arg>
+<arg>${DELETE_BTN}</arg>
+<status status="PASS" start="2024-05-01T15:29:11.926401" elapsed="0.298280"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2024-05-01T15:29:12.317366" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2024-05-01T15:29:12.224789" elapsed="0.092616"/>
+</kw>
+<kw name="Close All Browsers" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2024-05-01T15:29:12.317546" elapsed="0.082482"/>
+</kw>
+<status status="PASS" start="2024-05-01T15:29:10.149836" elapsed="2.250263"/>
+</test>
+<status status="PASS" start="2024-05-01T15:29:10.013584" elapsed="2.386739"/>
+</suite>
+<status status="PASS" start="2024-05-01T15:29:10.002553" elapsed="2.397966"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Kl-Robot">Kl-Robot</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Todo">Kl-Robot.Todo</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2024-05-01T15:29:10.462673" level="WARN">The chromedriver version (123.0.6312.58) detected in PATH at /Users/a667450/.cache/selenium/chromedriver/mac-arm64/123.0.6312.58//chromedriver might not be compatible with the detected chrome version (124.0.6367.118); currently, chromedriver 124.0.6367.91 is recommended for chrome 124.*, so it is advised to delete the driver in PATH and retry</msg>
+</errors>
+</robot>
